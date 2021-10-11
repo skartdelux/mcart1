@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Downloading...</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	<div id="content">
+		<div class="spinner">
+		  <div class="double-bounce1"></div>
+		  <div class="double-bounce2"></div>
+		</div>
+		<h1>Downloading...</h1>
+		<h3>Please wait...</h3>
+		<div id="main-image">
+			<img height="400" src="images/mr_char.png" alt="Loading" />
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			var hash = window.location.hash.substr(1);
+			if(hash && hash.length){
+				var ul = atob(hash);
+				setTimeout(function(){
+					window.location = ul;
+				},1500)
+			}
+		})
+	</script>
+</body>
+</html>
