@@ -19,15 +19,22 @@
 		</div>
 	</div>
 	<script>
+		function downloadFile(filePath){
+			var link=document.createElement('a');
+			link.href = filePath;
+			link.download = filePath.substr(filePath.lastIndexOf('/') + 1);
+			link.click();
+		}
 		$(document).ready(function(){
 			var hash = window.location.hash.substr(1);
 			if(hash && hash.length){
 				var ul = atob(hash);
 				setTimeout(function(){
-					window.open(ul, 'Download');
+					downloadFile(ul);
 				},1500)
 			}
 		})
+
 	</script>
 </body>
 </html>
